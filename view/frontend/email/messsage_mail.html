@@ -1,0 +1,24 @@
+<!--@subject {{trans "Epistolary Mail"}} @-->
+<!--@vars {
+"var subject":"Subject",
+"var message":"Message",
+"var original":"Original"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table class="message-details">
+    <tr>
+        <td><b>{{trans "Subject"}}</b></td>
+        <td>{{var subject}}</td>
+    </tr>
+</table>
+<p><b>{{trans "Message"}}</b></p>
+<p>{{var message}}</p>
+
+
+<p><b>{{trans "Original Message"}}</b></p>
+<p>{{var original}}</p>
+
+
+{{template config_path="design/email/footer_template"}}

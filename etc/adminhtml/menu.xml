@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="AR_Epistolary::epistolary"
+             title="Epistolary" module="AR_Epistolary"
+             sortOrder="51"
+             resource="AR_Epistolary::epistolary"/>
+        <add id="AR_Epistolary::epistolary_message"
+             title="Messages" module="AR_Epistolary"
+             sortOrder="10"
+             action="epistolary/message"
+             resource="AR_Epistolary::epistolary_message" parent="AR_Epistolary::epistolary"/>
+    </menu>
+</config>

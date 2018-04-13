@@ -1,0 +1,22 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+
+    <virtualType name="AR\Epistolary\Model\ResourceModel\Message\Grid\Collection" >
+        <arguments>
+            <argument name="mainTable" xsi:type="string">ar_epmessage</argument>
+            <argument name="resourceModel" xsi:type="string">AR\Epistolary\Model\ResourceModel\Message</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="epistolary_message_listing_data_source" xsi:type="string">AR\Epistolary\Model\ResourceModel\Message\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <preference for="Magento\Contact\Controller\Index\Post"
+                type="AR\Epistolary\Controller\Rewrite\Contact\Index\Post"
+    />
+
+</config>

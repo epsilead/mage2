@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link src="AR_Epistolary::js/sendmail.js"/>
+        <link src="AR_Epistolary::css/messages.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="epistolary_message_form" />
+            <block class="AR\Epistolary\Block\Adminhtml\Message\View\SendMail" name="sendmail" template="AR_Epistolary::message/sendmail.phtml" />
+        </referenceContainer>
+    </body>
+</page>

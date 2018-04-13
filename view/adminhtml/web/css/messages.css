@@ -1,0 +1,18 @@
+#message_section div.admin__field-label{
+    line-height: 1.6rem;
+}
+
+.modal-overlay-form label {
+
+}
+
+.modal-overlay-form input,
+.modal-overlay-form textarea {
+    width: 100%;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+ .hide {
+     display: none;
+ }

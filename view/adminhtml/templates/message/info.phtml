@@ -1,0 +1,57 @@
+<?php
+/**
+ * AR_Epistolary module
+ *
+ *
+ * @category  AR
+ * @package   AR_Epistolary
+ * @copyright 2018 Artem Rotmistrenko
+ * @license
+ * @author    Artem Rotmistrenko
+ */
+?>
+
+<?php
+/*
+ * @var array
+ */
+    $item = $block->getMessageItem();
+?>
+
+<div class="admin__field" id="message_section">
+    <div class="admin__page-section-title">
+        <span class="title">
+            <?= $block->escapeHtml(__('Message Information')) ?>
+        </span>
+    </div>
+    <div class="admin__fieldset-wrapper-content _hide">
+        <div class="admin__fieldset">
+            <div class="admin__field">
+                <div class="admin__field-label">
+                    <span class="title">Subject</span>
+                </div>
+                <div class="admin__field-control">
+                <span class="">
+                    <?= $item->getSubject() ?>
+                </span>
+                </div>
+            </div>
+            <div class="admin__field">
+                <div class="admin__field-label">
+                    <span class="title">Email</span>
+                </div>
+                <div class="admin__field-control">
+                    <?= $item->getEmail() ?>
+                </div>
+            </div>
+            <div class="admin__field">
+                <div class="admin__field-label">
+                    <span class="title">Message</span>
+                </div>
+                <div class="admin__field-control">
+                    <?= $item->getMessage() ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

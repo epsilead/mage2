@@ -1,0 +1,31 @@
+<?php
+/**
+ * AR_Epistolary module
+ *
+ *
+ * @category  AR
+ * @package   AR_Epistolary
+ * @copyright 2018 Artem Rotmistrenko
+ * @license
+ * @author    Artem Rotmistrenko
+ */
+?>
+<?php /** @var AR\Epistolary\Block\Adminhtml\Message\View\SendMail $block */ ?>
+
+<?php if ($message = $block->getMessage()) :?>
+    <div id="modal-overlay" style="display:none;width: 100%;">
+        <form id="modal-overlay-form" class="modal-overlay-form"
+              action="/adminel/epistolary/message/mail" method="post">
+            <input type="hidden" name="entity_id" id="id" value="<?=$message['entity_id']?>">
+            <div>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject">
+            </div>
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+            </div>
+        </form>
+        <div id="message-box"></div>
+    </div>
+<?php endif;?>

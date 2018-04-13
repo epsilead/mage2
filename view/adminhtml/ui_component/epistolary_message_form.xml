@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">epistolary_message_form.epistolary_message_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Message Info</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="reverseMetadataMerge" xsi:type="boolean">true</item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">AR\Epistolary\Block\Adminhtml\Button\Back</item>
+            <item name="delete" xsi:type="string">AR\Epistolary\Block\Adminhtml\Button\Delete</item>
+            <item name="save" xsi:type="string">AR\Epistolary\Block\Adminhtml\Button\Save</item>
+            <item name="mail" xsi:type="string">AR\Epistolary\Block\Adminhtml\Button\Mail</item>
+        </item>
+    </argument>
+    <settings>
+        <namespace>epistolary_message_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>epistolary_message_form.epistolary_message_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="epistolary_message_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <validateUrl path="catalog/category/validate"/>
+            <submitUrl path="epistolary/message/save"/>
+        </settings>
+        <dataProvider class="AR\Epistolary\Model\DataProvider" name="epistolary_message_form_data_source">
+            <settings>
+                <requestFieldName>entity_id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <collapsible>false</collapsible>
+            <label/>
+        </settings>
+        <field name="entity_id" formElement="hidden">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">message</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+
+        <field name="status" sortOrder="10" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">message</item>
+                    <item name="default" xsi:type="number">1</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">false</rule>
+                </validation>
+                <dataType>boolean</dataType>
+                <label translate="true">Comment Enable</label>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <valueMap>
+                            <map name="false" xsi:type="string">0</map>
+                            <map name="true" xsi:type="string">1</map>
+                        </valueMap>
+                        <prefer>toggle</prefer>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+        <container name="message_container" >
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">100</item>
+                </item>
+            </argument>
+            <htmlContent name="html_content">
+                <argument name="block" xsi:type="object">AR\Epistolary\Block\Adminhtml\Message\View\Info</argument>
+            </htmlContent>
+        </container>
+    </fieldset>
+</form>
