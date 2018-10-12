@@ -1,0 +1,25 @@
+{
+  "name": "epsilead/epistolary",
+  "description": "Magento 2 Epistolary module.",
+  "type": "magento2-module",
+  "homepage": "https://github.com/epsilead/epistolary",
+  "license": "MIT",
+  "require": {
+        "magento/magento-composer-installer": "*"
+    },
+  "version": "2.0.0",
+  "authors": [
+    {
+      "name": "Artem Rotmistrenko",
+      "email": "epsilead@gmail.com"
+    }
+  ],
+  "extra": {
+    "map": [
+      [
+        "src/",
+        "AR/Epistolary"
+      ]
+    ]
+  }
+}
